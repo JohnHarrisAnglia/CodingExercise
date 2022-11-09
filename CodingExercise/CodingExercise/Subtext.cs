@@ -11,11 +11,6 @@
 
             for (int i = 0; i < text.Length; i++)
             {
-                if (DoesSubtextExceedTextLength(text, subtextSearchTerm, i - subtextindex))
-                {
-                    return result.ToArray();
-                }
-
                 char subtextChar = char.ToUpperInvariant(subtextSearchTerm[subtextindex]);
                 char textChar = char.ToUpperInvariant(text[i]);
 
@@ -39,11 +34,6 @@
             }
 
             return result.ToArray();
-        }
-
-        private static bool DoesSubtextExceedTextLength(string text, string subtextSearchTerm, int currentPosition)
-        {
-            return currentPosition + subtextSearchTerm.Length > text.Length;
         }
     }
 }
